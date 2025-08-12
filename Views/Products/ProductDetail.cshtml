@@ -1,0 +1,17 @@
+﻿@model RiceShop.Models.Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+<div class="row">
+    <div class="col-md-6">
+        <img src="@(Model.ImageUrl ?? "/images/placeholder.png")" class="img-fluid" />
+    </div>
+    <div class="col-md-6">
+        <h2>@Model.Name</h2>
+        <p class="text-muted">@Model.Category?.Name</p>
+        <p>@Model.Description</p>
+        <h4 class="text-primary">৳@Model.Price</h4>
+        <p>Stock: @Model.Quantity</p>
+        <button class="btn btn-success">Add to cart</button>
+    </div>
+</div>

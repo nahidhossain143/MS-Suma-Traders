@@ -1,0 +1,42 @@
+﻿@model IEnumerable<RiceShop.Models.Product>
+@{
+    ViewData["Title"] = "Shop";
+    var cats = ViewBag.Categories as List<RiceShop.Models.Category>;
+}
+
+<div class="row mb-3">
+    <div class="col-md-3">
+        <h5>Categories</h5>
+        <ul class="list-group">
+            <li class="list-group-item"><a asp-controller="Products" asp-action="Index">All</a></li>
+            @foreach (var c in cats)
+            {
+                <li class="list-group-item">
+                    <a asp-controller="Products" asp-action="Index" asp-route-categoryId="@c.Id">@c.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-md-9">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            @foreach (var p in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@(p.ImageUrl ?? "/images/placeholder.png")" class="card-img-top" style="height:180px;object-fit:cover" />
+                        <div class="card-body">
+                            <h5 class="card-title">@p.Name</h5>
+                            <p class="card-text text-muted">@p.Category?.Name</p>
+                            <p class="card-text">@p.Description</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <strong class="text-primary">৳@p.Price</strong>
+                            <a asp-controller="Products" asp-action="Details" asp-route-id="@p.Id" class="btn btn-sm btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VeDcnwsMaoI=",
+  "dgSpecHash": "/wewUl8ivNA=",
   "success": true,
-  "projectFilePath": "E:\\MS Suma Traders\\MS Suma Traders.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\Source\\Repos\\MS-Suma-Traders\\MS Suma Traders.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

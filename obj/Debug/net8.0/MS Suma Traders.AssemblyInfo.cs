@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MS Suma Traders")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e7ff10b8ecfcf1bd740c06b7ee31088b8f0cb81")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ce5100180793fcff9f94bbacedc672a49d82040")]
 [assembly: System.Reflection.AssemblyProductAttribute("MS Suma Traders")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MS Suma Traders")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
