@@ -1,40 +1,27 @@
-﻿@model List<RiceShop.Models.Category>
+﻿@model IEnumerable<RiceShop.Models.Product>
 @{
-    ViewData["Title"] = "Home - Rice Shop";
+    ViewData["Title"] = "Home";
 }
 
-<h1>Welcome to Rice Shop Bangladesh</h1>
-
-<h2>Rice Categories</h2>
-<div class="row">
-    @foreach (var category in Model)
-    {
-        <div class="col-md-3 mb-3">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">@category.Name</h5>
-                    <p>Products: @category.Products.Count()</p>
-                    <a href="@Url.Action("Products", "Home", new { categoryId = category.Id })" class="btn btn-primary">View Products</a>
+<div class="py-4">
+    <h2>Featured Products</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+        @foreach (var p in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="@(p.ImageUrl ?? "/images/placeholder.png")" class="card-img-top" style="height:180px;object-fit:cover" />
+                    <div class="card-body">
+                        <h5 class="card-title">@p.Name</h5>
+                        <p class="card-text text-muted">@p.Category?.Name</p>
+                        <p class="card-text">@p.Description</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <strong class="text-primary">৳@p.Price</strong>
+                        <a asp-controller="Products" asp-action="Details" asp-route-id="@p.Id" class="btn btn-sm btn-outline-primary">View</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
-</div>
-
-<h2>Featured Products</h2>
-<div class="row">
-    @foreach (var product in Model.SelectMany(c => c.Products).Take(6))
-    {
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" />
-                <div class="card-body">
-                    <h5 class="card-title">@product.Name</h5>
-                    <p class="card-text">@product.Description</p>
-                    <p><strong>Price:</strong> @string.Format(new System.Globalization.CultureInfo("bn-BD"), "{0:C}", product.Price)</p>
-                    <a href="@Url.Action("ProductDetail", "Home", new { id = product.Id })" class="btn btn-success">View Details</a>
-                </div>
-            </div>
-        </div>
-    }
+        }
+    </div>
 </div>

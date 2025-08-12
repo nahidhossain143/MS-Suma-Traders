@@ -4,6 +4,6 @@ namespace RiceShop.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        // You can add more properties here later (e.g. Address, Phone etc.)
+        // future profile fields (FullName, Address...) can go here
     }
 }

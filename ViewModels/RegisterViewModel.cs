@@ -4,17 +4,13 @@ namespace RiceShop.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required, EmailAddress]
         public string Email { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
+        [Required, DataType(DataType.Password), MinLength(6)]
         public string Password { get; set; }
 
-        [Required]
-        [Compare("Password", ErrorMessage = "Passwords do not match")]
-        [DataType(DataType.Password)]
+        [DataType(DataType.Password), Compare("Password")]
         public string ConfirmPassword { get; set; }
     }
 }
